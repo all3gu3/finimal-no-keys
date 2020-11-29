@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finimal | Herramienta de identificación de especies</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Allegue, LeoPerez3006, el_llolloz_xd, Yony55, Charg3r" >
+		<meta name="copyright" content="">
+		<meta name="keywords" content="">
+        <meta name="description" content="Plataforma para análisis de imágenes de animales">
+        
+		<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
+        <meta http-equiv="content-style-type" content="text/css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive_header.css">
+        <link rel="stylesheet" type="text/css" href="css/tabs.css">
+        <link rel="stylesheet" type="text/css" href="css/images.css">
+        <link rel="stylesheet" type="text/css" href="css/sliders.css">
+        
+        <link rel="icon" type="image/png" href="img/f.png">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        
+        <!-- AWS SDK-->
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.799.0.min.js"></script>
+    </head>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">finimal</a>
+        <div class="header-right">
+            <a href="index.html">Inicio</a>
+            <a href="mapa.html">Mapa</a>
+            <a href="categorias.html">Categorías</a>
+            <a href="nosotros.html">Nosotros</a>
+        </div>
+    </div>
+    <table><tr>
+    <td>
+        <div id="img-container">
+            <table>
+                <tr>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Metadata</th>
+                        <th>Etiquetas</th>
+                        <th>Etiquetas removidas</th>
+                    </tr>
+                    <td id="img_0"><img height="150" width="auto" src="https://karma-testing.s3.amazonaws.com/Bosque+Pino+Encino/DSCF0058.jpg"></td>
+                    <td>Fecha: 27/06/2001</td>
+                    <td id="labels_0" class="labels">
+                        <button id="lab_0_0" >Black <a id="del_0_0" href="#default">X</a></button>
+                        <button id="lab_0_1" >Monochrome <a href="#default">X</a></button>
+                        <button id="lab_0_2" >Wildlife <a href="#default">X</a></button>
+                        <button id="lab_0_3" >Tail <a href="#default">X</a></button>
+                    </td>   
+                    <td id="del_0" class="deleted">
+                        <img height="15" width="auto" src="./img/trash.png">
+                        <button id="del_1_0" style="visibility: hidden;" >Black <a href="#default">X</a></button>
+                    </td>     
+                </tr>
+            
+                <tr>
+                    <td id="img_0"><img height="150" width="auto" src="https://karma-testing.s3.amazonaws.com/Bosque+Pino+Encino/DSCF0081.jpg"></td>
+                    <td>Fecha: 27/06/2001</td>
+                    <td id="labels_1" class="labels">
+                        <button id="lab_1_0" >Black <a href="#default">X</a></button>
+                        <button id="lab_1_1" >Monochrome <a href="#default">X</a></button>
+                        <button id="lab_1_2" >Wildlife <a href="#default">X</a></button>
+                        <button id="lab_1_3" >Bear <a href="#default">X</a></button>
+                    </td>  
+                    <td id="del_1" class="deleted">
+                        <img height="15" width="auto" src="./img/trash.png">
+                        <button id="del_1_0" style="visibility: hidden;" >Black <a href="#default">X</a></button>
+                    </td> 
+                </tr>
+
+                <tr>
+                    <td id="img_0"><img height="150" width="auto" src="https://karma-testing.s3.amazonaws.com/Bosque+Pino+Encino/DSCF0063.jpg"></td>
+                    <td>Fecha: 27/06/2001</td>
+                    <td id="labels_1" class="labels">
+                        <button id="lab_2_0" >Wildlife <a href="#default">X</a></button>
+                        <button id="lab_2_1" >Cannidae <a href="#default">X</a></button>
+                        <button id="lab_2_2" >Mammal <a href="#default">X</a></button>
+                    </td>
+                    <td id="del_2" class="deleted">
+                        <img height="15" width="auto" src="./img/trash.png">
+                        <button id="del_1_0" style="visibility: hidden;" >Black <a href="#default">X</a></button>
+                    </td>  
+                </tr>
+            </table>
+        </div>
+    </td>
+    <td>
+        <div id="filters-container">
+            <table width="100%">
+                <tr>
+                    <th>Filtros</th>
+                </tr>
+                <tr>
+                    <td style="border-bottom-color: #131211;">Año</td>
+                    <td>
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange"><br> 2017 | 2018 | 2019 | 2020
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border-bottom-color: #131211;">Estación</td>
+                    <td>
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange"><br> Pri | Ver | Oto | Inv
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border-bottom-color: #131211;">Estación</td>
+                    <td>
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange"><br> Mañana | Día | Noche
+                    </td>
+                </tr>
+                <tr>
+                    <th>Buscar por etiquetas</th>
+                </tr>
+                <tr>
+                    <td style="border-bottom-color: #131211;">+</td>
+                    <td>
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange"><br> <button id="lab_2_0" >Wildlife <a href="#default">X</a></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </td>
+    </tr></table>
+    
+    
+    <script>
+        //document.getElementById("lab_1_1").innerHTML = 'Bear <a href="#default">X</a>';
+        $(document).ready(function(){
+            $("#del_0_0").click(function(){
+                $("#lab_0_0").hide();
+                document.getElementById("del_1_0").style.visibility="visible";
+            });
+        });
+    </script>
+
+</body>
+</html>

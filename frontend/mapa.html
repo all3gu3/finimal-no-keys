@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Finimal | Herramienta de identificación de especies</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Allegue, LeoPerez3006, el_llolloz_xd, Yony55, Charg3r" >
+        <meta name="copyright" content="">
+        <meta name="keywords" content="">
+        <meta name="description" content="Plataforma para análisis de imágenes de animales">
+        
+        <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
+        <meta http-equiv="content-style-type" content="text/css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive_header.css">
+        <link rel="stylesheet" type="text/css" href="css/tabs.css">
+        <link rel="stylesheet" type="text/css" href="css/images.css">
+        
+        <link rel="icon" type="image/png" href="img/f.png">
+        
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        
+        <!-- AWS SDK-->
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.799.0.min.js"></script>
+        <link rel="stylesheet" href="css/estilosmapita.css">
+    </head>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">finimal</a>
+        <div class="header-right">
+            <a href="index.html">Inicio</a>
+            <a href="mapa.html">Mapa</a>
+            <a href="categorias.html">Categorías</a>
+            <a href="nosotros.html">Nosotros</a>
+        </div>
+    </div>
+  <head>
+    <titlem></title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"defer></script><style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        const uluru = { lat: -25.344, lng: 131.036 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Encuéntralos!</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+  </body>
+</html>

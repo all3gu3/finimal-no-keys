@@ -1,0 +1,81 @@
+div#img-container{
+    margin-top: 1%;
+    
+    width: 100%;
+    background-color: #23211F;
+    border-radius: 2px; 
+}
+
+div#filters-container{
+   
+    margin-left: 0%;
+    width: 310px;
+    background-color: #23211F;
+    border-radius: 2px;     
+}
+
+td {
+    border: solid 1px #23211F;
+    padding: 6px 6px;
+    border-radius: 5px; 
+    background-color: #131211;
+    text-align: center;
+}
+
+.deleted{
+    width: 25%;
+    border: solid 1px #23211F;
+    padding: 6px 6px;
+    border-radius: 5px; 
+    background-color:#312e2b;
+    text-align: center;
+}
+
+.deleted a {
+    text-decoration: none;
+    font-family: psistem;
+    color: #3d3a37;
+    font-size: 20px;
+}
+
+.deleted button{
+    background-color: #fda545; /* Green */
+    margin-top: 5px;
+    border: none;
+    border-radius: 2px;
+    color: #131211;
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.labels button{
+    background-color: #ff8500; /* Green */
+    margin-top: 5px;
+    border: none;
+    border-radius: 2px;
+    color: #131211;
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.labels button:hover {
+    background-color: #131211;
+    color:#ff8500;
+}
+
+.labels button:hover a {
+    background-color: #131211;
+    color:#ff8500;
+}
+
+
+.labels a {
+    text-decoration: none;
+    font-family: psistem;
+    color: #131211;
+    font-size: 20px;
+}

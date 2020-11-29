@@ -1,0 +1,22 @@
+{
+  "name": "huerto",
+  "version": "1.0.0",
+  "description": "Proyecto integrador - Huerto IoT API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Equipo 6",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^5.5.0",
+    "@google-cloud/vision": "^2.1.2",
+    "aws-sdk": "^2.799.0",
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.6"
+  }
+}
